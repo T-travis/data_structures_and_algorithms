@@ -1,6 +1,9 @@
-from graph import Graph
+from searching.graphs.graph import Graph
+
 
 class DepthFirstPaths:
+    """DepthFirstPaths is a Depth First Search implementation that finds if there
+       is a path from one vertex to another."""
 
     def __init__(self, graph, start_vertex):
         self.start_vertex = start_vertex 
@@ -11,7 +14,7 @@ class DepthFirstPaths:
     def dfs(self, g, v):
         self.marked[v] = True 
         for w in g.adjacents(v):
-            if(not self.marked[w]):
+            if not self.marked[w]:
                 self.edge_to[w] = v
                 self.dfs(g, w)
 
@@ -28,7 +31,6 @@ class DepthFirstPaths:
         path.append(self.start_vertex)
         path.reverse()
         return path 
-
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Graph:
     """Graph is an undirected ajacency-list data structure.
        Each index of the array is an vertex and its list are 

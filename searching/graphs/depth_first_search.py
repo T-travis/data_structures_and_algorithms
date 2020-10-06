@@ -1,4 +1,5 @@
-from graph import Graph
+from searching.graphs.graph import Graph
+
 
 class DepthFirstSearch:
     """DepthFirstSearch is a Depth First Search implementation.  This
@@ -19,10 +20,9 @@ class DepthFirstSearch:
 
     def connected_vertices(self):
         connected = []
-        for vertice, _ in enumerate(self.marked):
-            if self.marked[vertice]: connected.append(vertice)
+        for vertex, _ in enumerate(self.marked):
+            if self.marked[vertex]: connected.append(vertex)
         return connected
-
 
 
 if __name__ == '__main__':

@@ -1,9 +1,11 @@
-from graph import Graph 
+from searching.graphs.graph import Graph
 from collections import deque
 
 
 class BreadthFirstPaths:
-    """BreadthFirstPaths is a Breadth First Search algorithm implementation."""
+    """BreadthFirstPaths is a Breadth First Search algorithm implementation.
+       Breadth first search is used to find the shortest path from one vertex
+       to another."""
 
     def __init__(self, graph: Graph, start_vertex: int) -> None:
         self.graph = graph
@@ -13,7 +15,7 @@ class BreadthFirstPaths:
         self.bfs()
 
     def bfs(self) -> None:
-        queue = deque() 
+        queue = deque()
         self.marked[self.start_vertex] = True
         queue.appendleft(self.start_vertex)
         while len(queue) > 0:
@@ -21,23 +23,22 @@ class BreadthFirstPaths:
             for w in self.graph.adjacents(v):
                 if not self.marked[w]:
                     self.edge_to[w] = v
-                    self.marked[w] = True 
+                    self.marked[w] = True
                     queue.appendleft(w)
 
     def has_path_to(self, v: int) -> bool:
         return self.marked[v]
 
     def path_to(self, v: int) -> list:
-        if not self.has_path_to(v): return None 
-        path = [] 
-        x = v 
+        if not self.has_path_to(v): return None
+        path = []
+        x = v
         while x != self.start_vertex:
             path.append(x)
             x = self.edge_to[x]
         path.append(self.start_vertex)
         path.reverse()
-        return path 
-
+        return path
 
 
 if __name__ == '__main__':
