@@ -1,7 +1,11 @@
+#  BUBBLE SORT
 
+# n = arr
+# Time Complexity:  O(n^2)
+# Space Complexity: O(1)
 def sort(arr):
     # Bubble Sort implementation n^2 complexity
-    for i in range(len(arr) - 1):
+    for _ in range(len(arr) - 1):
         for j in range(len(arr) - 1):
             if arr[j+1] < arr[j]:
                 swap(arr, j+1, j)

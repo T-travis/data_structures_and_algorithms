@@ -2,7 +2,7 @@ import heapq
 
 # A Priority Queue adds and removes according to some priority among the items in the
 # queue. { (1, item), (2, item), (5, item), (99, item), ...} where priority is highest
-# bases on lowest num in (num, item).  This is build using a Min Heap and in Python
+# bases on lowest num in (num, item).  This is built using a Min Heap and in Python
 # the "heapq" does just that for you.
 
 # to max it a max heap, assuming integers are used for the ordering, convert the num to -num
@@ -32,13 +32,14 @@ class PriorityQueue:
     def __str__(self):
         return str(self.q)
 
- 
-pq = PriorityQueue()
-pq.push(99, 'just programming for fun')
-pq.push(1, 'the world is ending')
-pq.push(4, 'playing video games')
-print(pq)
-print(pq.size())
-print(pq.pop())
-print(pq)
-print(pq.size())
+
+if __name__ == '__main__':
+    pq = PriorityQueue()
+    pq.push(99, 'just programming for fun')
+    pq.push(1, 'the world is ending')
+    pq.push(4, 'playing video games')
+    print(pq)
+    print(pq.size())
+    print(pq.pop())
+    print(pq)
+    print(pq.size())

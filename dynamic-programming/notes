@@ -1,0 +1,23 @@
+https://www.youtube.com/watch?v=oBt53YbR9Kk&list=WL&index=1&ab_channel=freeCodeCamp.org
+
+DYNAMIC PROGRAMMING: find overlapping subproblems and store results so they don't have to
+be calculated again and thus greatly speeding up time complexity 
+MEMOIZATION or memoisation is an optimization technique used primarily to speed up computer 
+programs by storing the results of expensive function calls and returning the cached result 
+when the same inputs occur again.
+
+Memoization Problem Solving Tips (recursive): 
+    1. draw out as tree structure, visualize it
+    2. find subproblems, found in nodes in drawn tree
+    3. find base cases, found in leaf nodes or similar
+    4. find brute force solution using recursion
+    5. convert brute force to memoization solution using recursion
+
+Tabulation Problem Solving Tips (iterative):
+    1. visualize the problem as a table
+    2. find size of the table is based on inputs
+    3. initialize the table with default values
+    4. seed the trivial answer into the table
+    5. iterate through table
+    6. fill further positions based on the current position
+    

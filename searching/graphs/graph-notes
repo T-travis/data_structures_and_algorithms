@@ -1,0 +1,31 @@
+DFS and BFS can be used to search various structures 
+(mostly trees or graphs) by relationships.
+
+Depth First Search (LIFO)
+https://www.youtube.com/watch?v=7fujbpJ0LB4
+* Time Complexity O(Vertices + Edges)
+* use a stack iterative or call stack (recursion)
+* used for with slight modification: find minimum spanning tree,
+  detect cycles, check if bipartite graph, check if strongly connected,
+  Topologically Sort nodes in a graph, etc
+* goes deep (search adjacent nodes recursively coming back
+  to check remaining neighbors)
+
+Breadth First Search (FIFO)
+https://www.youtube.com/watch?v=oDqjPvD54Ss 
+* Time Complexity O(Vertices + Edges)
+* use a queue (iterative)
+* check if path exists between two nodes (used for shortest path on unweighted graphs)
+* goes wide (explores all neighbors before moving on)
+
+Topological Sort
+https://www.youtube.com/watch?v=cIBFEhD77b4
+* Topological odering is an ordering of the nodes of a
+  directed graph where for each directed edge from node A
+  to node B, node A appears before node B in the ordering.
+* Graphs must be Directed Acyclic Graphs (DAGS) to have topological
+  order.  These means directed graphs without cycles.
+* Orderings are NOT unique.
+* Time Complexity O(Vertices + Edges)
+* Some uses: program build dependencies, event scheduling,
+  assembly instructions, etc...

@@ -11,39 +11,35 @@ class Node:
 class CustomQueue:
     
     def __init__(self):
-        self.front = None
-        self.back = None
+        self.head = None
+        self.tail = None
         
     def enqueue(self, value):
-        if self.front:
-            temp = self.front
-            self.front = Node(value)
-            self.front.next = temp
-            temp.prev = self.front
+        node = Node(value)
+        if self.head is None:
+            self.head = node
+            self.tail = self.head
         else:
-            self.front = Node(value)
-            self.back = self.front  
-            self.back.prev = self.front
-            
+            self.tail.next = node
+            self.tail = self.tail.next
             
     def dequeue(self):
-        if self.front is None:
+        if self.head is None:
             return None
         
-        val = self.back.value
-        if self.front == self.back:
-            self.front, self.back = None, None
-        else:
-            self.back = self.back.prev
-            self.back.next = None
+        val = self.head.value
+        self.head = self.head.next
+        if self.head is None:
+            self.tail = None
+            
         return val
     
     def peek(self):
-        return self.front.value
+        return self.head.value
             
     def __str__(self):
         str_representation = "["
-        temp = self.front 
+        temp = self.head
         if temp:
             str_representation += f"{temp.value}"
             temp = temp.next

@@ -14,12 +14,13 @@ class CustomStack:
         self.size = 0
         
     def push(self, value):
+        node = Node(value)
         if self.top:
             temp = self.top
-            self.top = Node(value)
+            self.top = node
             self.top.next = temp
         else:
-            self.top = Node(value)
+            self.top = node
         self.size += 1
             
     def pop(self):
@@ -57,4 +58,6 @@ if __name__ == '__main__':
     print(stack)
     assert stack.peek() == 2
     assert stack.pop() == 2
+    assert stack.pop() == 1
+    print(stack)
     
