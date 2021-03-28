@@ -8,7 +8,10 @@
 # import Min Priority Queue
 from priority_queue import PriorityQueue
 
-
+# Time Complexity O(n + log(n))
+# Space Complexity O(n)
+# This can be improved to have Space Complexity of O(1) is sorting the array in place
+# See pg 324 of Algorithms for O(1) space complexity
 def heap_sort(array):
     min_pq = PriorityQueue()
     for el in array:
