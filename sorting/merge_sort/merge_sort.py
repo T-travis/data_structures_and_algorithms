@@ -1,7 +1,7 @@
 """
 Merge Sort implementation O(n log n) time complexity, O(n) space complexity.
    Why logn:
-    array = [1,2,3,4,5,6,7,8] has three splits, 2^3 = 8 and log8 = 3 (log base 2)
+    array = [1,2,3,4,5,6,7,8] has three splits, 2^3 = 8 and log8 = 3 (log base 2 or 2^n)
            [1,2,3,4] [5,6,7,8]
          [1,2] [3,4] [5,6] [7,8]
       [1] [2] [3] [4] [5] [6] [7] [8]
@@ -14,13 +14,13 @@ Merge Sort implementation O(n log n) time complexity, O(n) space complexity.
 """
 
 
-def sort(arr1):
+def merge_sort(arr1):
     if len(arr1) <= 1:
         return arr1
 
     mid = len(arr1) // 2
-    left = sort(arr1[0:mid])
-    right = sort(arr1[mid:])
+    left = merge_sort(arr1[0:mid])
+    right = merge_sort(arr1[mid:])
 
     return _merge(left, right)
 
@@ -51,4 +51,4 @@ def _merge(arr1, arr2):
 
 
 arr = [99, 1, 202, 3, 0]
-print(sort(arr))
+print(merge_sort(arr))

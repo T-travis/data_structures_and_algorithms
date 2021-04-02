@@ -1,20 +1,11 @@
 from random import shuffle
 
 
-# Time complexity O(n log(n)) partition time (n) * recursive function calls (log(n))
-# Space complexity O(log(n)) it uses extra space only for storing recursive function calls
-def quick_sort(array):
-    # Shuffle array to prevent bad partitions (unbalanced partitions).  Unbalanced partitions can
-    # result in up to N partition sorts ( n ^ 2 time complexity)
-    shuffle(array)
-    sort(array, 0, len(array) - 1)
-
-def sort(array, low, high):
-    if high <= low: return
-    partition_index = partition(array, low, high)
-    sort(array, low, partition_index - 1)
-    sort(array, partition_index + 1, high)
-
+def swap(array, x, y):
+    tmp = array[x]
+    array[x] = array[y]
+    array[y] = tmp
+    
 def partition(array, low, high):
     i, j, partition_item = low, high + 1, array[low]
     while True:
@@ -40,11 +31,20 @@ def partition(array, low, high):
     # return the 
     return j
 
+def sort(array, low, high):
+    if high <= low: return
+    partition_index = partition(array, low, high)
+    sort(array, low, partition_index - 1)
+    sort(array, partition_index + 1, high)
 
-def swap(array, x, y):
-    tmp = array[x]
-    array[x] = array[y]
-    array[y] = tmp 
+# Time complexity O(n log(n)) partition time (n) * recursive function calls (log(n))
+# Space complexity O(log(n)) it uses extra space only for storing recursive function calls
+def quick_sort(array):
+    # Shuffle array to prevent bad partitions (unbalanced partitions).  Unbalanced partitions can
+    # result in up to N partition sorts ( n ^ 2 time complexity)
+    shuffle(array)
+    sort(array, 0, len(array) - 1)
+
 
 if __name__ == '__main__':
     a = [9, 1, 3, 4, 23, 0]
